@@ -1,115 +1,629 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lend Sociedade de Crédito Direto S.A.</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Cliente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f4f6f9;
-    color:#333;
-}
-header{
-    background:#003366;
-    color:#fff;
-    text-align:center;
-    padding:35px 20px;
-}
-section{
-    max-width:900px;
-    margin:auto;
-    padding:20px;
-}
-.box{
-    background:#fff;
-    padding:20px;
-    margin-bottom:20px;
-    border-radius:8px;
-    box-shadow:0 2px 8px rgba(0,0,0,.1);
-}
-h2{
-    color:#003366;
-}
-ul{
-    padding-left:20px;
-}
-footer{
-    background:#003366;
-    color:#fff;
-    text-align:center;
-    padding:20px;
-}
-</style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
 
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0a0a0a 0%, #0d2818 100%);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #00c853;
+            box-shadow: 0 4px 20px rgba(0, 200, 83, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #00c853, #00a843);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: #0a0a0a;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: #00c853;
+        }
+
+        .nav-whatsapp {
+            background: linear-gradient(135deg, #00c853, #00a843);
+            color: #0a0a0a;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.4);
+        }
+
+        .nav-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 200, 83, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 90px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #0d2818 50%, #0a0a0a 100%);
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 200, 83, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 200, 83, 0.15);
+            border: 1px solid rgba(0, 200, 83, 0.4);
+            color: #00c853;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 30px;
+            animation: pulse-badge 2s infinite;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(0, 200, 83, 0); }
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #ffffff 0%, #00c853 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: #b0b0b0;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00c853, #00a843);
+            color: #0a0a0a;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 200, 83, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #00c853;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid #00c853;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 200, 83, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #0f0f0f;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .section-header h2 span {
+            color: #00c853;
+        }
+
+        .section-header p {
+            color: #888;
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #151515, #1a1a1a);
+            border: 1px solid #1f1f1f;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #00c853, #00a843);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #00c853;
+            box-shadow: 0 20px 40px rgba(0, 200, 83, 0.15);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #00c85320, #00a84320);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            border: 2px solid #00c85340;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .service-card p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #00c853, #00a843);
+            color: #0a0a0a;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 200, 83, 0.5);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0d2818 0%, #0a0a0a 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 200, 83, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-section h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 span {
+            color: #00c853;
+        }
+
+        .cta-section p {
+            color: #aaa;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-whatsapp {
+            background: linear-gradient(135deg, #00c853, #00a843);
+            color: #0a0a0a;
+            text-decoration: none;
+            padding: 20px 50px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0, 200, 83, 0.5);
+            position: relative;
+            z-index: 1;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 8px 30px rgba(0, 200, 83, 0.5); }
+            50% { box-shadow: 0 8px 40px rgba(0, 200, 83, 0.8); }
+        }
+
+        .cta-whatsapp:hover {
+            transform: scale(1.05);
+        }
+
+        /* Floating WhatsApp - Icone Oficial */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #00c853, #00a843);
+            color: #ffffff;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 6px 25px rgba(0, 200, 83, 0.5);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: pulse-float 2s infinite;
+        }
+
+        .floating-whatsapp svg {
+            width: 36px;
+            height: 36px;
+            fill: #ffffff;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 8px 35px rgba(0, 200, 83, 0.7);
+        }
+
+        @keyframes pulse-float {
+            0%, 100% { box-shadow: 0 6px 25px rgba(0, 200, 83, 0.5); }
+            50% { box-shadow: 0 6px 35px rgba(0, 200, 83, 0.8); }
+        }
+
+        /* Tooltip do botao flutuante */
+        .floating-whatsapp::after {
+            content: 'Fale Conosco';
+            position: absolute;
+            right: 75px;
+            background: #1a1a1a;
+            color: #00c853;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            border: 1px solid #00c85340;
+        }
+
+        .floating-whatsapp:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Footer */
+        footer {
+            background: #050505;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        footer p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        footer .footer-whatsapp {
+            color: #00c853;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .hero-text p {
+                font-size: 18px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .nav-whatsapp span {
+                display: none;
+            }
+
+            .nav-whatsapp {
+                padding: 12px 16px;
+            }
+
+            .floating-whatsapp {
+                width: 55px;
+                height: 55px;
+            }
+
+            .floating-whatsapp svg {
+                width: 30px;
+                height: 30px;
+            }
+
+            .floating-whatsapp::after {
+                display: none;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-<h1>Lend Sociedade de Crédito Direto S.A.</h1>
-<p>CNPJ: 37.526.080/0001-23</p>
-<p>Soluções Financeiras Digitais</p>
-</header>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">+</div>
+                    <div class="logo-text">Portal do <span>Cliente</span></div>
+                </div>
+                <a href="https://wa.me/5511951972304?text=Olá!%20Preciso%20de%20ajuda%20com%20minha%20fatura%20do%20plano%20de%20saúde." class="nav-whatsapp" target="_blank">
+                    ?? <span>Falar no WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
 
-<section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">? Atendimento 24h</div>
+                <div class="hero-text">
+                    <h1>2ª Via de Fatura Atualizada em Segundos</h1>
+                    <p>Resolvemos sua fatura em atraso, emitimos segunda via atualizada e regularizamos seu plano de saúde sem burocracia. Atendimento rápido e humanizado.</p>
+                </div>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/5511951972304?text=Olá!%20Preciso%20da%202ª%20via%20da%20minha%20fatura%20atualizada." class="btn-primary" target="_blank">
+                        ?? Solicitar 2ª Via
+                    </a>
+                    <a href="https://wa.me/5511951972304?text=Olá!%20Tenho%20uma%20fatura%20em%20atraso%20e%20preciso%20de%20ajuda." class="btn-secondary" target="_blank">
+                        ?? Fatura em Atraso
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="box">
-<h2>Sobre</h2>
-<p>
-A Lend Sociedade de Crédito Direto S.A. é uma instituição financeira voltada ao desenvolvimento de soluções de crédito digital, buscando oferecer processos ágeis, seguros e eficientes para clientes e parceiros, utilizando tecnologia para simplificar operações financeiras.
-</p>
-</div>
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos <span>Serviços</span></h2>
+                <p>Soluções completas para sua fatura de plano de saúde. Sem formulários, sem complicação. Um clique e resolvemos tudo pelo WhatsApp.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">??</div>
+                    <h3>2ª Via Atualizada</h3>
+                    <p>Emitimos sua segunda via de fatura atualizada em poucos minutos. Código de barras válido e pronto para pagamento.</p>
+                    <a href="https://wa.me/5511951972304?text=Olá!%20Preciso%20da%202ª%20via%20atualizada%20do%20meu%20plano%20de%20saúde." class="whatsapp-btn" target="_blank">
+                        ?? Pedir 2ª Via
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">??</div>
+                    <h3>Fatura em Atraso</h3>
+                    <p>Negociamos sua fatura em atraso com as melhores condições. Evite o cancelamento do seu plano de saúde.</p>
+                    <a href="https://wa.me/5511951972304?text=Olá!%20Minha%20fatura%20está%20em%20atraso%20e%20preciso%20negociar." class="whatsapp-btn" target="_blank">
+                        ?? Negociar Agora
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">??</div>
+                    <h3>Regularização Rápida</h3>
+                    <p>Regularizamos seu plano de saúde pendente. Reativamos sua carteirinha e garantimos seu atendimento médico.</p>
+                    <a href="https://wa.me/5511951972304?text=Olá!%20Preciso%20regularizar%20meu%20plano%20de%20saúde%20urgente." class="whatsapp-btn" target="_blank">
+                        ?? Regularizar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="box">
-<h2>Serviços</h2>
-<ul>
-<li>Crédito digital</li>
-<li>Análise e concessão de crédito</li>
-<li>Soluções financeiras para pessoas físicas e jurídicas</li>
-<li>Atendimento digital</li>
-<li>Tecnologia aplicada ao mercado financeiro</li>
-<li>Gestão de operações de crédito</li>
-<li>Suporte ao cliente</li>
-</ul>
-</div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Não perca seu <span>Plano de Saúde</span></h2>
+            <p>Fatura em atraso? Precisa da 2ª via? Clique abaixo e fale direto conosco pelo WhatsApp. Resolvemos tudo em minutos, sem filas, sem espera.</p>
+            <a href="https://wa.me/5511951972304?text=Olá!%20Preciso%20de%20ajuda%20urgente%20com%20minha%20fatura%20do%20plano%20de%20saúde." class="cta-whatsapp" target="_blank">
+                ?? Falar no WhatsApp Agora
+            </a>
+        </div>
+    </section>
 
-<div class="box">
-<h2>Licenças e Regularidade</h2>
-<p>
-A empresa atua como Sociedade de Crédito Direto (SCD), observando a legislação aplicável e as normas do Sistema Financeiro Nacional. As operações são conduzidas conforme a regulamentação vigente para esse tipo de instituição.
-</p>
-</div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>
+                © 2026 Portal do Cliente - Todos os direitos reservados.<br>
+                <a href="https://wa.me/5511951972304" class="footer-whatsapp" target="_blank">WhatsApp: (11) 95197-2304</a>
+            </p>
+        </div>
+    </footer>
 
-<div class="box">
-<h2>Política de Privacidade</h2>
-<p>
-Os dados pessoais coletados são utilizados exclusivamente para análise de solicitações, atendimento, cumprimento de obrigações legais e prestação de serviços. O tratamento das informações segue os princípios da Lei Geral de Proteção de Dados (LGPD), adotando medidas de segurança para proteger os dados dos usuários.
-</p>
-</div>
+    <!-- Floating WhatsApp Button - Icone Oficial -->
+    <a href="https://wa.me/5511951972304?text=Olá!%20Preciso%20de%20ajuda%20com%20minha%20fatura%20do%20plano%20de%20saúde." class="floating-whatsapp" target="_blank" title="Fale Conosco">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.358-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
 
-<div class="box">
-<h2>Termos de Uso</h2>
-<p>
-Ao acessar este site, o usuário concorda em utilizá-lo de forma lícita e responsável. As informações disponibilizadas possuem caráter institucional e poderão ser alteradas sem aviso prévio. O uso do site não estabelece relação contratual automática entre a empresa e o usuário.
-</p>
-</div>
-
-<div class="box">
-<h2>Contato</h2>
-<p>
-Para informações sobre produtos, serviços ou atendimento, entre em contato pelos canais oficiais da empresa.
-</p>
-</div>
-
-</section>
-
+</body>
+</html>
 <footer>
-<p><strong>Lend Sociedade de Crédito Direto S.A.</strong></p>
-<p>CNPJ: 37.526.080/0001-23</p>
-<p>© 2026 - Todos os direitos reservados.</p>
+    © 2026 - Central de Atendimento e Emissão de Faturas
 </footer>
 
 </body>
