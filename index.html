@@ -19,142 +19,6 @@
             overflow-x: hidden;
         }
 
-        /* ===== POPUP DE AVISO ===== */
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            backdrop-filter: blur(4px);
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .popup-box {
-            background: #ffffff;
-            border-radius: 24px;
-            padding: 40px 35px;
-            max-width: 480px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            border: 2px solid #00c853;
-            animation: slideUp 0.4s ease;
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(40px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .popup-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #00c853, #00a843);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 32px;
-        }
-
-        .popup-box h2 {
-            font-size: 24px;
-            font-weight: 800;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-        }
-
-        .popup-box h2 span {
-            color: #00c853;
-        }
-
-        .popup-box p {
-            font-size: 15px;
-            color: #555;
-            line-height: 1.7;
-            margin-bottom: 25px;
-        }
-
-        .popup-services {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        .popup-service-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: #f0fdf4;
-            padding: 12px 16px;
-            border-radius: 12px;
-            border-left: 4px solid #00c853;
-            text-align: left;
-        }
-
-        .popup-service-item span {
-            font-size: 20px;
-        }
-
-        .popup-service-item p {
-            margin: 0;
-            font-size: 14px;
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-
-        .popup-whatsapp-btn {
-            background: linear-gradient(135deg, #00c853, #00a843);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 16px 32px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 16px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(0, 200, 83, 0.4);
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .popup-whatsapp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 200, 83, 0.6);
-        }
-
-        .popup-close {
-            margin-top: 15px;
-            background: none;
-            border: none;
-            color: #888;
-            font-size: 13px;
-            cursor: pointer;
-            text-decoration: underline;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .popup-close:hover {
-            color: #555;
-        }
-
         /* ===== HEADER ===== */
         header {
             background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
@@ -163,7 +27,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid #00c853;
+            border-bottom: 2px solid #0a8a3e;
             box-shadow: 0 4px 20px rgba(0, 200, 83, 0.15);
         }
 
@@ -188,7 +52,7 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #00c853, #00a843);
+            background: linear-gradient(135deg, #0a8a3e, #086b2f);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -206,11 +70,11 @@
         }
 
         .logo-text span {
-            color: #00c853;
+            color: #0a8a3e;
         }
 
         .nav-whatsapp {
-            background: linear-gradient(135deg, #00c853, #00a843);
+            background: linear-gradient(135deg, #0a8a3e, #086b2f);
             color: #ffffff;
             text-decoration: none;
             padding: 12px 28px;
@@ -265,7 +129,7 @@
             gap: 8px;
             background: rgba(0, 200, 83, 0.1);
             border: 1px solid rgba(0, 200, 83, 0.3);
-            color: #00a843;
+            color: #086b2f;
             padding: 10px 24px;
             border-radius: 50px;
             font-weight: 600;
@@ -284,7 +148,7 @@
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 25px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #00a843 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #086b2f 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -308,7 +172,7 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #00c853, #00a843);
+            background: linear-gradient(135deg, #0a8a3e, #086b2f);
             color: #ffffff;
             text-decoration: none;
             padding: 18px 40px;
@@ -331,7 +195,7 @@
 
         .btn-secondary {
             background: transparent;
-            color: #00a843;
+            color: #086b2f;
             text-decoration: none;
             padding: 18px 40px;
             border-radius: 50px;
@@ -341,7 +205,7 @@
             align-items: center;
             gap: 10px;
             transition: all 0.3s ease;
-            border: 2px solid #00c853;
+            border: 2px solid #0a8a3e;
         }
 
         .btn-secondary:hover {
@@ -368,7 +232,7 @@
         }
 
         .section-header h2 span {
-            color: #00c853;
+            color: #0a8a3e;
         }
 
         .section-header p {
@@ -402,7 +266,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #00c853, #00a843);
+            background: linear-gradient(90deg, #0a8a3e, #086b2f);
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
@@ -413,21 +277,21 @@
 
         .service-card:hover {
             transform: translateY(-10px);
-            border-color: #00c853;
+            border-color: #0a8a3e;
             box-shadow: 0 20px 40px rgba(0, 200, 83, 0.12);
         }
 
         .service-icon {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, #00c85320, #00a84320);
+            background: linear-gradient(135deg, #0a8a3e20, #086b2f20);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
             font-size: 28px;
-            border: 2px solid #00c85340;
+            border: 2px solid #0a8a3e40;
         }
 
         .service-card h3 {
@@ -445,7 +309,7 @@
         }
 
         .whatsapp-btn {
-            background: linear-gradient(135deg, #00c853, #00a843);
+            background: linear-gradient(135deg, #0a8a3e, #086b2f);
             color: #ffffff;
             text-decoration: none;
             padding: 12px 28px;
@@ -495,7 +359,7 @@
         }
 
         .cta-section h2 span {
-            color: #00c853;
+            color: #0a8a3e;
         }
 
         .cta-section p {
@@ -508,7 +372,7 @@
         }
 
         .cta-whatsapp {
-            background: linear-gradient(135deg, #00c853, #00a843);
+            background: linear-gradient(135deg, #0a8a3e, #086b2f);
             color: #ffffff;
             text-decoration: none;
             padding: 20px 50px;
@@ -539,7 +403,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: linear-gradient(135deg, #00c853, #00a843);
+            background: linear-gradient(135deg, #0a8a3e, #086b2f);
             color: #ffffff;
             width: 65px;
             height: 65px;
@@ -575,7 +439,7 @@
             position: absolute;
             right: 75px;
             background: #ffffff;
-            color: #00a843;
+            color: #086b2f;
             padding: 8px 16px;
             border-radius: 8px;
             font-size: 13px;
@@ -585,7 +449,7 @@
             transform: translateX(10px);
             transition: all 0.3s ease;
             pointer-events: none;
-            border: 1px solid #00c85340;
+            border: 1px solid #0a8a3e40;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
@@ -608,7 +472,7 @@
         }
 
         footer .footer-whatsapp {
-            color: #00a843;
+            color: #086b2f;
             text-decoration: none;
             font-weight: 600;
         }
@@ -665,38 +529,10 @@
 <base target="_blank">
 <base target="_blank">
 <base target="_blank">
+<base target="_blank">
+<base target="_blank">
 </head>
 <body>
-
-    <!-- POPUP DE AVISO -->
-    <div class="popup-overlay" id="popupAviso">
-        <div class="popup-box">
-            <div class="popup-icon">📢</div>
-            <h2>Bem-vindo ao <span>Portal do Cliente</span></h2>
-            <p>Este site é exclusivo para os seguintes serviços. Clique no botão abaixo para ser atendido diretamente pelo WhatsApp.</p>
-            <div class="popup-services">
-                <div class="popup-service-item">
-                    <span>📄</span>
-                    <p>Emissão de 2ª via atualizada</p>
-                </div>
-                <div class="popup-service-item">
-                    <span>⚠️</span>
-                    <p>Fatura em atraso</p>
-                </div>
-                <div class="popup-service-item">
-                    <span>💰</span>
-                    <p>Renegociação de débitos</p>
-                </div>
-            </div>
-            <a href="https://wa.me/51985230038?text=Olá!%20Preciso%20de%20ajuda%20com%20minha%20fatura%20do%20plano%20de%20saúde." class="popup-whatsapp-btn" target="_blank" onclick="fecharPopup()">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.358-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-                Falar no WhatsApp
-            </a>
-            <button class="popup-close" onclick="fecharPopup()">Continuar navegando no site</button>
-        </div>
-    </div>
 
     <!-- Header -->
     <header>
@@ -726,8 +562,8 @@
                     <a href="https://wa.me/51985230038?text=Olá!%20Preciso%20da%202ª%20via%20da%20minha%20fatura%20atualizada." class="btn-primary" target="_blank">
                         📄 Solicitar 2ª Via
                     </a>
-                    <a href="https://wa.me/51985230038?text=Olá!%20Tenho%20uma%20fatura%20em%20atraso%20e%20preciso%20de%20ajuda." class="btn-secondary" target="_blank">
-                        ⚠️ Fatura em Atraso
+                    <a href="https://wa.me/51985230038?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20meu%20plano%20de%20saúde." class="btn-secondary" target="_blank">
+                        👨‍💼 Falar com Especialista
                     </a>
                 </div>
             </div>
@@ -806,9 +642,6 @@
     </a>
 
     <script>
-        function fecharPopup() {
-            document.getElementById('popupAviso').style.display = 'none';
-        }
     </script>
 
 </body>
