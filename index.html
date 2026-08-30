@@ -3,919 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unimed</title>
+    <title>Med Sênior</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #ffffff; color: #1a1a1a; overflow-x: hidden; scroll-behavior: smooth; }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #ffffff;
-            color: #1a1a1a;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        /* ===== HEADER ===== */
         header {
-            background: linear-gradient(135deg, #ffffff 0%, #e6f7f0 100%);
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid #00995d;
-            box-shadow: 0 4px 20px rgba(0, 153, 93, 0.15);
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+            padding: 18px 0; position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 2px solid #0a8a3e; box-shadow: 0 4px 20px rgba(0, 200, 83, 0.15);
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #00995d, #007a4a);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: 800;
-            color: #ffffff;
-        }
-
-        .logo-text {
-            font-size: 22px;
-            font-weight: 800;
-            color: #1a1a1a;
-            letter-spacing: 1px;
-        }
-
-        .logo-text span {
-            color: #00995d;
-        }
-
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; }
+        .logo-img { height: 90px; width: auto; max-width: 360px; object-fit: contain; display: block; transition: transform 0.3s ease; }
+        .logo-img:hover { transform: scale(1.05); }
         .nav-whatsapp {
-            background: linear-gradient(135deg, #00995d, #007a4a);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 14px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 153, 93, 0.3);
+            background: linear-gradient(135deg, #0a8a3e, #086b2f); color: #ffffff; text-decoration: none;
+            padding: 12px 28px; border-radius: 50px; font-weight: 700; font-size: 14px;
+            display: inline-flex; align-items: center; gap: 8px;
+            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);
         }
+        .nav-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(0, 200, 83, 0.5); }
 
-        .nav-whatsapp:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 153, 93, 0.5);
-        }
-
-        /* ===== HERO ===== */
         .hero {
-            margin-top: 90px;
-            background: linear-gradient(135deg, #ffffff 0%, #e6f7f0 50%, #ffffff 100%);
-            padding: 120px 0 100px;
-            position: relative;
-            overflow: hidden;
-            text-align: center;
+            margin-top: 110px; background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 50%, #ffffff 100%);
+            padding: 120px 0 100px; position: relative; overflow: hidden; text-align: center;
         }
-
         .hero::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(0, 153, 93, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
+            content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 800px; height: 800px; background: radial-gradient(circle, rgba(0, 200, 83, 0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;
         }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
         .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 153, 93, 0.1);
-            border: 1px solid rgba(0, 153, 93, 0.3);
-            color: #007a4a;
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 30px;
-            animation: pulse-badge 2s infinite;
+            display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 200, 83, 0.1);
+            border: 1px solid rgba(0, 200, 83, 0.3); color: #086b2f; padding: 10px 24px;
+            border-radius: 50px; font-weight: 600; font-size: 14px; margin-bottom: 30px; animation: pulse-badge 2s infinite;
         }
-
-        @keyframes pulse-badge {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 153, 93, 0.3); }
-            50% { box-shadow: 0 0 0 10px rgba(0, 153, 93, 0); }
-        }
-
-        .hero-text h1 {
-            font-size: 52px;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 25px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #007a4a 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-text p {
-            font-size: 20px;
-            color: #555;
-            line-height: 1.7;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #00995d, #007a4a);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 16px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 153, 93, 0.3);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 153, 93, 0.5);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #007a4a;
-            text-decoration: none;
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 16px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            border: 2px solid #00995d;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(0, 153, 93, 0.08);
-            transform: translateY(-3px);
-        }
-
-        /* ===== SERVICES ===== */
-        .services {
-            padding: 80px 0;
-            background: #f0f9f4;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-        }
-
-        .section-header h2 span {
-            color: #00995d;
-        }
-
-        .section-header p {
-            color: #666;
-            font-size: 16px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background: linear-gradient(135deg, #ffffff, #e6f7f0);
-            border: 1px solid #cce8db;
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #00995d, #007a4a);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: #00995d;
-            box-shadow: 0 20px 40px rgba(0, 153, 93, 0.12);
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #00995d20, #007a4a20);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 28px;
-            border: 2px solid #00995d40;
-        }
-
-        .service-card h3 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #1a1a1a;
-        }
-
-        .service-card p {
-            color: #555;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .whatsapp-btn {
-            background: linear-gradient(135deg, #00995d, #007a4a);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 14px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 153, 93, 0.3);
-        }
-
-        .whatsapp-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0, 153, 93, 0.5);
-        }
-
-        /* ===== CTA ===== */
-        .cta-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #e6f7f0 0%, #ffffff 100%);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(0, 153, 93, 0.06) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .cta-section h2 {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-            color: #1a1a1a;
-        }
-
-        .cta-section h2 span {
-            color: #00995d;
-        }
-
-        .cta-section p {
-            color: #555;
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto 40px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-whatsapp {
-            background: linear-gradient(135deg, #00995d, #007a4a);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 20px 50px;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 18px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 30px rgba(0, 153, 93, 0.4);
-            position: relative;
-            z-index: 1;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 8px 30px rgba(0, 153, 93, 0.4); }
-            50% { box-shadow: 0 8px 40px rgba(0, 153, 93, 0.7); }
-        }
-
-        .cta-whatsapp:hover {
-            transform: scale(1.05);
-        }
-
-        /* ===== FLOATING WHATSAPP ===== */
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #00995d, #007a4a);
-            color: #ffffff;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 6px 25px rgba(0, 153, 93, 0.4);
-            z-index: 999;
-            transition: all 0.3s ease;
-            animation: pulse-float 2s infinite;
-        }
-
-        .floating-whatsapp svg {
-            width: 36px;
-            height: 36px;
-            fill: #ffffff;
-        }
-
-        .floating-whatsapp:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 8px 35px rgba(0, 153, 93, 0.6);
-        }
-
-        @keyframes pulse-float {
-            0%, 100% { box-shadow: 0 6px 25px rgba(0, 153, 93, 0.4); }
-            50% { box-shadow: 0 6px 35px rgba(0, 153, 93, 0.7); }
-        }
-
-        .floating-whatsapp::after {
-            content: 'Fale Conosco';
-            position: absolute;
-            right: 75px;
-            background: #ffffff;
-            color: #007a4a;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            white-space: nowrap;
-            opacity: 0;
-            transform: translateX(10px);
-            transition: all 0.3s ease;
-            pointer-events: none;
-            border: 1px solid #00995d40;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .floating-whatsapp:hover::after {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: #e6f7f0;
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid #cce8db;
-        }
-
-        footer p {
-            color: #666;
-            font-size: 14px;
-        }
-
-        footer .footer-whatsapp {
-            color: #007a4a;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .hero-text h1 {
-                font-size: 36px;
-            }
-
-            .hero-text p {
-                font-size: 18px;
-            }
-
-            .section-header h2 {
-                font-size: 28px;
-            }
-
-            .cta-section h2 {
-                font-size: 28px;
-            }
-
-            .nav-whatsapp span {
-                display: none;
-            }
-
-            .nav-whatsapp {
-                padding: 12px 16px;
-            }
-
-            .floating-whatsapp {
-                width: 55px;
-                height: 55px;
-            }
-
-            .floating-whatsapp svg {
-                width: 30px;
-                height: 30px;
-            }
-
-            .floating-whatsapp::after {
-                display: none;
-            }
-
-            .popup-box {
-                padding: 30px 20px;
-            }
-
-            .popup-box h2 {
-                font-size: 20px;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                max-width: 100%;
-                padding: 0 15px;
-            }
-
-            .service-card {
-                padding: 30px 20px;
-            }
-
-}
-
-        /* Logo image styles */
-        .logo-img {
-            transition: transform 0.3s ease;
-        }
-        .logo-img:hover {
-            transform: scale(1.05);
-        }
-
-        .hero-logo-img {
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-        .hero-logo-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-        }
-
-        /* ===== LEGAL SECTIONS ===== */
-        .legal-section {
-            padding: 80px 0;
-            background: #ffffff;
-        }
-
-        .legal-section h2 {
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: #1a1a1a;
-            text-align: center;
-        }
-
-        .legal-section h2 span {
-            color: #00995d;
-        }
-
-        .legal-section .last-update {
-            text-align: center;
-            color: #888;
-            font-size: 14px;
-            margin-bottom: 40px;
-        }
-
-        .legal-highlight {
-            background: linear-gradient(135deg, #e6f7f0, #d4f0e3);
-            border-left: 4px solid #00995d;
-            padding: 20px 25px;
-            border-radius: 0 12px 12px 0;
-            margin-bottom: 40px;
-        }
-
-        .legal-highlight p {
-            color: #333;
-            font-size: 15px;
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        .legal-section h3 {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-top: 35px;
-            margin-bottom: 15px;
-        }
-
-        .legal-section p {
-            color: #555;
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-
-        .legal-section ul {
-            margin-bottom: 20px;
-            padding-left: 25px;
-        }
-
-        .legal-section ul li {
-            color: #555;
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 8px;
-        }
-
-        .legal-divider {
-            height: 80px;
-            background: linear-gradient(180deg, #ffffff 0%, #e6f7f0 50%, #ffffff 100%);
-        }
-
-        #politica-privacidade {
-            margin-top: 40px;
-        }
+        @keyframes pulse-badge { 0%, 100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.3); } 50% { box-shadow: 0 0 0 10px rgba(0, 200, 83, 0); } }
+        .hero-text h1 { font-size: 52px; font-weight: 800; line-height: 1.1; margin-bottom: 25px; background: linear-gradient(135deg, #1a1a1a 0%, #086b2f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero-text p { font-size: 20px; color: #555; line-height: 1.7; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .hero-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: linear-gradient(135deg, #0a8a3e, #086b2f); color: #ffffff; text-decoration: none; padding: 18px 40px; border-radius: 50px; font-weight: 700; font-size: 16px; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0, 200, 83, 0.3); border: none; cursor: pointer; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0, 200, 83, 0.5); }
+        .btn-secondary { background: transparent; color: #086b2f; text-decoration: none; padding: 18px 40px; border-radius: 50px; font-weight: 700; font-size: 16px; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; border: 2px solid #0a8a3e; }
+        .btn-secondary:hover { background: rgba(0, 200, 83, 0.08); transform: translateY(-3px); }
+
+        .services { padding: 80px 0; background: #f8fdf9; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 36px; font-weight: 800; margin-bottom: 15px; color: #1a1a1a; }
+        .section-header h2 span { color: #0a8a3e; }
+        .section-header p { color: #666; font-size: 16px; max-width: 600px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 800px; margin: 0 auto; }
+        .service-card { background: linear-gradient(135deg, #ffffff, #f0fdf4); border: 1px solid #e0f2e9; border-radius: 20px; padding: 40px 30px; text-align: center; transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #0a8a3e, #086b2f); transform: scaleX(0); transition: transform 0.4s ease; }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card:hover { transform: translateY(-10px); border-color: #0a8a3e; box-shadow: 0 20px 40px rgba(0, 200, 83, 0.12); }
+        .service-icon { width: 70px; height: 90px; background: linear-gradient(135deg, #0a8a3e20, #086b2f20); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; border: 2px solid #0a8a3e40; }
+        .service-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; color: #1a1a1a; }
+        .service-card p { color: #555; font-size: 14px; line-height: 1.6; margin-bottom: 25px; }
+        .whatsapp-btn { background: linear-gradient(135deg, #0a8a3e, #086b2f); color: #ffffff; text-decoration: none; padding: 12px 28px; border-radius: 50px; font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3); }
+        .whatsapp-btn:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(0, 200, 83, 0.5); }
+
+        .cta-section { padding: 100px 0; background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%); text-align: center; position: relative; overflow: hidden; }
+        .cta-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(0, 200, 83, 0.06) 0%, transparent 70%); border-radius: 50%; }
+        .cta-section h2 { font-size: 42px; font-weight: 800; margin-bottom: 20px; position: relative; z-index: 1; color: #1a1a1a; }
+        .cta-section h2 span { color: #0a8a3e; }
+        .cta-section p { color: #555; font-size: 18px; max-width: 600px; margin: 0 auto 40px; position: relative; z-index: 1; }
+        .cta-whatsapp { background: linear-gradient(135deg, #0a8a3e, #086b2f); color: #ffffff; text-decoration: none; padding: 20px 50px; border-radius: 50px; font-weight: 800; font-size: 18px; display: inline-flex; align-items: center; gap: 12px; transition: all 0.3s ease; box-shadow: 0 8px 30px rgba(0, 200, 83, 0.4); position: relative; z-index: 1; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { box-shadow: 0 8px 30px rgba(0, 200, 83, 0.4); } 50% { box-shadow: 0 8px 40px rgba(0, 200, 83, 0.7); } }
+        .cta-whatsapp:hover { transform: scale(1.05); }
+
+        .floating-whatsapp { position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, #0a8a3e, #086b2f); color: #ffffff; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 6px 25px rgba(0, 200, 83, 0.4); z-index: 999; transition: all 0.3s ease; animation: pulse-float 2s infinite; }
+        .floating-whatsapp svg { width: 36px; height: 36px; fill: #ffffff; }
+        .floating-whatsapp:hover { transform: scale(1.1) rotate(5deg); box-shadow: 0 8px 35px rgba(0, 200, 83, 0.6); }
+        @keyframes pulse-float { 0%, 100% { box-shadow: 0 6px 25px rgba(0, 200, 83, 0.4); } 50% { box-shadow: 0 6px 35px rgba(0, 200, 83, 0.7); } }
+        .floating-whatsapp::after { content: 'Fale Conosco'; position: absolute; right: 75px; background: #ffffff; color: #086b2f; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s ease; pointer-events: none; border: 1px solid #0a8a3e40; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .floating-whatsapp:hover::after { opacity: 1; transform: translateX(0); }
+
+        footer { background: #f0fdf4; padding: 40px 0; text-align: center; border-top: 1px solid #e0f2e9; }
+        footer p { color: #666; font-size: 14px; }
+        .footer-link { color: #086b2f; text-decoration: none; font-weight: 600; margin: 0 10px; cursor: pointer; background: none; border: none; font-family: inherit; font-size: 14px; display: inline; padding: 0; }
+        .footer-link:hover { text-decoration: underline; }
+
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; z-index: 10000; padding: 20px; opacity: 0; transition: opacity 0.3s ease; }
+        .modal-overlay.active { display: flex; opacity: 1; }
+        .modal-card { background: #ffffff; color: #1a1a1a; max-width: 720px; width: 100%; max-height: 85vh; overflow-y: auto; border-radius: 20px; padding: 40px; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.25); transform: translateY(20px) scale(0.98); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); border: 2px solid #0a8a3e; }
+        .modal-overlay.active .modal-card { transform: translateY(0) scale(1); }
+        .modal-card h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; color: #1a1a1a; background: linear-gradient(135deg, #1a1a1a 0%, #086b2f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .modal-tag { display: inline-block; background: linear-gradient(135deg, #0a8a3e, #086b2f); color: #ffffff; padding: 5px 16px; border-radius: 50px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+        .modal-card h3 { font-size: 18px; font-weight: 700; margin: 28px 0 10px; color: #0a8a3e; }
+        .modal-card p, .modal-card li { font-size: 15px; color: #444; line-height: 1.8; }
+        .modal-card ul { padding-left: 22px; margin-bottom: 14px; }
+        .modal-card ul li { margin-bottom: 8px; }
+        .modal-close { position: absolute; top: 16px; right: 16px; width: 42px; height: 42px; border-radius: 50%; border: none; background: linear-gradient(135deg, #0a8a3e, #086b2f); color: #ffffff; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; line-height: 1; }
+        .modal-close:hover { transform: rotate(90deg); opacity: 0.9; }
+        .modal-card strong { color: #086b2f; }
 
         @media (max-width: 768px) {
-            .legal-section {
-                padding: 50px 0;
-            }
-            .legal-section h2 {
-                font-size: 26px;
-            }
-            .legal-section h3 {
-                font-size: 18px;
-            }
-            .legal-divider {
-                height: 50px;
-            }
+            .hero-text h1 { font-size: 32px; } .hero-text p { font-size: 17px; } .section-header h2 { font-size: 26px; } .cta-section h2 { font-size: 26px; }
+            .nav-whatsapp span { display: none; } .nav-whatsapp { padding: 12px 16px; }
+            .floating-whatsapp { width: 55px; height: 90px; } .floating-whatsapp svg { width: 30px; height: 30px; } .floating-whatsapp::after { display: none; }
+            .services-grid { grid-template-columns: 1fr; max-width: 100%; padding: 0 15px; } .service-card { padding: 30px 20px; }
+            .logo-img { height: 72px; max-width: 290px; } .modal-card { padding: 28px 20px; max-height: 90vh; } .modal-card h2 { font-size: 22px; }
         }
-
     </style>
-<base target="_blank">
-<base target="_blank">
 <base target="_blank">
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="data:image/png;base64,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" alt="Unimed" class="logo-img" style="height: 100px; width: auto; object-fit: contain;">
-                </div>
-                <a href="https://wa.me/11967281183?text=Olá!%20Preciso%20de%20ajuda%20com%20minha%20fatura%20do%20plano%20de%20saúde." class="nav-whatsapp" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.358-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> <span>Falar no WhatsApp</span>
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <img src="data:image/jpeg;base64,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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB/9k=" alt="Med Sênior" class="logo-img">
+            </div>
+            <a href="https://wa.me/13982299394?text=Olá!%20Preciso%20de%20ajuda%20com%20minha%20fatura%20do%20plano%20de%20saúde." class="nav-whatsapp" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.358-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> <span>Falar no WhatsApp</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">🕐 Atendimento 24h</div>
+            <div class="hero-text">
+                <h1>2ª Via de Fatura Atualizada em Segundos</h1>
+                <p>Resolvemos sua fatura em atraso, emitimos segunda via atualizada e regularizamos seu plano de saúde sem burocracia. Atendimento rápido e humanizado.</p>
+            </div>
+            <div class="hero-buttons">
+                <a href="https://wa.me/13982299394?text=Olá!%20Preciso%20da%202ª%20via%20da%20minha%20fatura%20atualizada." class="btn-primary" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Solicitar 2ª Via
+                </a>
+                <a href="https://wa.me/13982299394?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20meu%20plano%20de%20saúde." class="btn-secondary" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Falar com Especialista
                 </a>
             </div>
         </div>
-    </header>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">🕐 Atendimento 24h</div>
-                <div class="hero-text">
-                    <h1>2ª Via de Fatura Atualizada em Segundos</h1>
-                    <p>Resolvemos sua fatura em atraso, emitimos segunda via atualizada e regularizamos seu plano de saúde sem burocracia. Atendimento rápido e humanizado.</p>
-                </div>
-                <div class="hero-buttons">
-                    <a href="https://wa.me/11967281183?text=Olá!%20Preciso%20da%202ª%20via%20da%20minha%20fatura%20atualizada." class="btn-primary" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Solicitar 2ª Via
-                    </a>
-                    <a href="https://wa.me/11967281183?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20meu%20plano%20de%20saúde." class="btn-secondary" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Falar com Especialista
-                    </a>
-                </div>
+<section class="services">
+    <div class="container">
+        <div class="section-header">
+            <h2>Nossos <span>Serviços</span></h2>
+            <p>Soluções completas para sua fatura de plano de saúde. Sem formulários, sem complicação. Um clique e resolvemos tudo pelo WhatsApp.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
+                <h3>2ª Via Atualizada</h3>
+                <p>Emitimos sua segunda via de fatura atualizada em poucos minutos. Código de barras válido e pronto para pagamento.</p>
+                <a href="https://wa.me/13982299394?text=Olá!%20Preciso%20da%202ª%20via%20atualizada%20do%20meu%20plano%20de%20saúde." class="whatsapp-btn" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Pedir 2ª Via
+                </a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <h3>Fatura em Atraso</h3>
+                <p>Negociamos sua fatura em atraso com as melhores condições. Evite o cancelamento do seu plano de saúde.</p>
+                <a href="https://wa.me/13982299394?text=Olá!%20Minha%20fatura%20está%20em%20atraso%20e%20preciso%20negociar." class="whatsapp-btn" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> Negociar Agora
+                </a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg></div>
+                <h3>Suporte ao Cliente</h3>
+                <p>Tire suas dúvidas, altere dados cadastrais, consulte informações do plano e receba atendimento personalizado com nossa equipe.</p>
+                <a href="https://wa.me/13982299394?text=Olá!%20Preciso%20de%20suporte%20ao%20cliente%20e%20tenho%20algumas%20dúvidas." class="whatsapp-btn" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg> Falar com Suporte
+                </a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path><circle cx="20" cy="10" r="2"></circle></svg></div>
+                <h3>Agendar Exame</h3>
+                <p>Agendamos seus exames laboratoriais e de imagem na rede credenciada da Med Sênior. Rápido, prático e sem filas de espera.</p>
+                <a href="https://wa.me/13982299394?text=Olá!%20Gostaria%20de%20agendar%20um%20exame%20na%20rede%20credenciada." class="whatsapp-btn" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.358-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Agendar Exame
+                </a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg></div>
+                <h3>Agendar Consulta</h3>
+                <p>Marque sua consulta médica com especialistas da rede credenciada. Escolha dia, horário e local de forma simples pelo WhatsApp.</p>
+                <a href="https://wa.me/13982299394?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20médica." class="whatsapp-btn" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.358-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Agendar Consulta
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Nossos <span>Serviços</span></h2>
-                <p>Soluções completas para sua fatura de plano de saúde. Sem formulários, sem complicação. Um clique e resolvemos tudo pelo WhatsApp.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
-                    <h3>2ª Via Atualizada</h3>
-                    <p>Emitimos sua segunda via de fatura atualizada em poucos minutos. Código de barras válido e pronto para pagamento.</p>
-                    <a href="https://wa.me/11967281183?text=Olá!%20Preciso%20da%202ª%20via%20atualizada%20do%20meu%20plano%20de%20saúde." class="whatsapp-btn" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Pedir 2ª Via
-                    </a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
-                    <h3>Fatura em Atraso</h3>
-                    <p>Negociamos sua fatura em atraso com as melhores condições. Evite o cancelamento do seu plano de saúde.</p>
-                    <a href="https://wa.me/11967281183?text=Olá!%20Minha%20fatura%20está%20em%20atraso%20e%20preciso%20negociar." class="whatsapp-btn" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> Negociar Agora
-                    </a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
-                    <h3>Regularização Rápida</h3>
-                    <p>Regularizamos seu plano de saúde pendente. Reativamos sua carteirinha e garantimos seu atendimento médico.</p>
-                    <a href="https://wa.me/11967281183?text=Olá!%20Preciso%20regularizar%20meu%20plano%20de%20saúde%20urgente." class="whatsapp-btn" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Regularizar
-                    </a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg></div>
-                    <h3>Suporte ao Cliente</h3>
-                    <p>Tire suas dúvidas, altere dados cadastrais, consulte informações do plano e receba atendimento personalizado com nossa equipe.</p>
-                    <a href="https://wa.me/11967281183?text=Olá!%20Preciso%20de%20suporte%20ao%20cliente%20e%20tenho%20algumas%20dúvidas." class="whatsapp-btn" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg> Falar com Suporte
-                    </a>
-                </div>
-                </div>
+<section class="cta-section">
+    <div class="container">
+        <h2>Não perca seu <span>Plano de Saúde</span></h2>
+        <p>Fatura em atraso? Precisa da 2ª via? Clique abaixo e fale direto conosco pelo WhatsApp. Resolvemos tudo em minutos, sem filas, sem espera.</p>
+        <a href="https://wa.me/13982299394?text=Olá!%20Preciso%20de%20ajuda%20urgente%20com%20minha%20fatura%20do%20plano%20de%20saúde." class="cta-whatsapp" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.358-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Falar no WhatsApp Agora
+        </a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p style="margin-bottom: 10px;">
+            <button class="footer-link" onclick="openModal('terms')">Termos de Uso</button> |
+            <button class="footer-link" onclick="openModal('privacy')">Política de Privacidade</button>
+        </p>
+        <p>© 2026 Med Sênior — Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal-card" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+<a href="https://wa.me/13982299394?text=Olá!%20Preciso%20de%20ajuda%20com%20minha%20fatura%20do%20plano%20de%20saúde." class="floating-whatsapp" target="_blank" title="Fale Conosco">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.358-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+</a>
+
+<script>
+const modalContent = {
+    privacy: `
+        <span class="modal-tag">Privacidade</span>
+        <h2>Política de Privacidade</h2>
+        <p><strong>Última atualização:</strong> 29 de Julho de 2026</p>
+
+        <h3>1. Dados Coletados</h3>
+        <p>Podemos coletar as seguintes informações quando você utiliza nossos canais de atendimento:</p>
+        <ul>
+            <li><strong>Dados de identificação:</strong> nome completo, CPF, RG e data de nascimento;</li>
+            <li><strong>Dados de contato:</strong> número de telefone, endereço de e-mail e endereço residencial;</li>
+            <li><strong>Dados do plano:</strong> número da carteirinha, operadora, tipo de plano e dependentes;</li>
+            <li><strong>Dados de pagamento:</strong> informações bancárias necessárias para emissão de boletos e faturas;</li>
+            <li><strong>Dados de comunicação:</strong> histórico de conversas pelo WhatsApp, e-mails e ligações telefônicas.</li>
+        </ul>
+
+        <h3>2. Finalidade do Tratamento</h3>
+        <p>Seus dados são coletados e utilizados exclusivamente para as seguintes finalidades:</p>
+        <ul>
+            <li>Emitir 2ª via de faturas e boletos atualizados;</li>
+            <li>Negociar faturas em atraso e regularizar planos de saúde;</li>
+            <li>Prestar atendimento ao cliente e sanar dúvidas;</li>
+            <li>Atualizar dados cadastrais junto à operadora de saúde;</li>
+            <li>Enviar comunicações sobre vencimentos, reajustes e novidades do plano.</li>
+        </ul>
+
+        <h3>3. Compartilhamento de Dados</h3>
+        <p>Seus dados pessoais <strong>não são vendidos, alugados ou comercializados</strong> a terceiros. Podemos compartilhar informações apenas com:</p>
+        <ul>
+            <li>A operadora de plano de saúde contratada, exclusivamente para fins de regularização e atualização cadastral;</li>
+            <li>Prestadores de serviços que auxiliam em nossas operações (ex: sistemas de atendimento), sob rigorosos contratos de confidencialidade;</li>
+            <li>Órgãos públicos, quando exigido por lei ou ordem judicial.</li>
+        </ul>
+
+        <h3>4. Segurança da Informação</h3>
+        <p>Adotamos medidas técnicas e administrativas para proteger seus dados contra acesso não autorizado, alteração, divulgação ou destruição:</p>
+        <ul>
+            <li>Criptografia de dados em trânsito (SSL/TLS);</li>
+            <li>Armazenamento seguro em servidores com controle de acesso;</li>
+            <li>Políticas internas de confidencialidade para nossos colaboradores;</li>
+            <li>Monitoramento contínuo de nossos sistemas.</li>
+        </ul>
+
+        <h3>5. Seus Direitos (LGPD)</h3>
+        <p>Conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você possui os seguintes direitos:</p>
+        <ul>
+            <li>Acessar seus dados pessoais que mantemos;</li>
+            <li>Solicitar correção de dados incompletos, inexatos ou desatualizados;</li>
+            <li>Solicitar anonimização, bloqueio ou eliminação de dados desnecessários;</li>
+            <li>Revogar seu consentimento a qualquer momento;</li>
+            <li>Solicitar portabilidade dos dados a outro fornecedor;</li>
+            <li>Ser informado sobre o compartilhamento de seus dados.</li>
+        </ul>
+        <p>Para exercer seus direitos, entre em contato pelo WhatsApp (13) 98229-9394.</p>
+
+        <h3>6. Cookies e Tecnologias de Rastreamento</h3>
+        <p>Este site pode utilizar cookies e tecnologias similares para melhorar a experiência do usuário, analisar tráfego e personalizar conteúdo. Você pode configurar seu navegador para recusar cookies, mas isso pode afetar a funcionalidade de alguns recursos.</p>
+
+        <h3>7. Alterações nesta Política</h3>
+        <p>Esta Política de Privacidade pode ser atualizada periodicamente. Recomendamos que você a revise com frequência. Alterações significativas serão comunicadas por meio dos nossos canais oficiais.</p>
+
+        <h3>8. Contato</h3>
+        <p>Em caso de dúvidas sobre esta Política de Privacidade ou sobre o tratamento de seus dados pessoais, entre em contato:</p>
+        <ul>
+            
+            <li><strong>Atendimento:</strong> Disponível 24 horas</li>
+        </ul>
+    `,
+    terms: `
+        <span class="modal-tag">Termos</span>
+        <h2>Termos de Uso</h2>
+        <p><strong>Última atualização:</strong> 29 de Julho de 2026</p>
+
+        <div style="background: linear-gradient(135deg, #f0fdf4, #e8f5e9); border-left: 4px solid #0a8a3e; padding: 18px 22px; border-radius: 0 12px 12px 0; margin: 20px 0;">
+            <p style="margin:0; color:#333; font-size:15px; line-height:1.7;">Ao acessar e utilizar este site, você concorda em cumprir e estar vinculado aos seguintes Termos de Uso. Caso não concorde com qualquer parte destes termos, solicitamos que não utilize nossos serviços.</p>
         </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Não perca seu <span>Plano de Saúde</span></h2>
-            <p>Fatura em atraso? Precisa da 2ª via? Clique abaixo e fale direto conosco pelo WhatsApp. Resolvemos tudo em minutos, sem filas, sem espera.</p>
-            <a href="https://wa.me/11967281183?text=Olá!%20Preciso%20de%20ajuda%20urgente%20com%20minha%20fatura%20do%20plano%20de%20saúde." class="cta-whatsapp" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.358-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Falar no WhatsApp Agora
-            </a>
-        </div>
-    </section>
+        <h3>1. Aceitação dos Termos</h3>
+        <p>Ao utilizar este site e nossos canais de atendimento (incluindo WhatsApp), você declara que leu, compreendeu e aceita integralmente estes Termos de Uso, bem como nossa Política de Privacidade.</p>
 
+        <h3>2. Natureza do Serviço</h3>
+        <p>A <strong>Med Sênior</strong> atua como intermediadora de serviços relacionados a planos de saúde, oferecendo suporte para:</p>
+        <ul>
+            <li>Emissão de 2ª via de faturas e boletos atualizados;</li>
+            <li>Negociação de faturas em atraso;</li>
+            <li>Regularização de planos de saúde suspensos ou cancelados;</li>
+            <li>Suporte ao cliente e atualização de dados cadastrais.</li>
+        </ul>
+        <p>Os serviços são prestados em parceria com operadoras de plano de saúde, sendo que a Med Sênior não é uma operadora de saúde, mas sim uma empresa de atendimento e suporte ao cliente.</p>
 
-    <!-- TERMOS DE USO -->
-    <section class="legal-section" id="termos-de-uso">
-        <div class="container">
-            <h2>Termos de <span>Uso</span></h2>
-            <p class="last-update">Última atualização: 29 de Julho de 2026</p>
+        <h3>3. Uso Adequado do Site</h3>
+        <p>O usuário se compromete a utilizar este site e nossos canais de comunicação de forma ética e lícita, abstendo-se de:</p>
+        <ul>
+            <li>Fornecer informações falsas, incompletas ou enganosas;</li>
+            <li>Tentar acessar áreas restritas do site sem autorização;</li>
+            <li>Utilizar robôs, spiders ou outros meios automatizados de acesso;</li>
+            <li>Interferir na segurança ou na integridade dos nossos sistemas;</li>
+            <li>Utilizar o site para fins ilícitos ou que violem direitos de terceiros.</li>
+        </ul>
 
-            <div class="legal-highlight">
-                <p>Ao acessar e utilizar este site, você concorda em cumprir e estar vinculado aos seguintes Termos de Uso. Caso não concorde com qualquer parte destes termos, solicitamos que não utilize nossos serviços.</p>
-            </div>
+        <h3>4. Responsabilidades do Usuário</h3>
+        <p>Para utilizar nossos serviços, o usuário deve:</p>
+        <ul>
+            <li>Ser maior de 18 anos ou estar representado por responsável legal;</li>
+            <li>Fornecer dados verdadeiros, precisos e atualizados;</li>
+            <li>Manter a confidencialidade de informações sensíveis compartilhadas;</li>
+            <li>Verificar a autenticidade de comunicações recebidas em nosso nome;</li>
+            <li>Informar-nos imediatamente sobre qualquer uso não autorizado de sua conta ou dados.</li>
+        </ul>
 
-            <h3>1. Aceitação dos Termos</h3>
-            <p>Ao utilizar este site e nossos canais de atendimento (incluindo WhatsApp), você declara que leu, compreendeu e aceita integralmente estes Termos de Uso, bem como nossa Política de Privacidade.</p>
+        <h3>5. Limitação de Responsabilidade</h3>
+        <p>A Med Sênior se esforça para manter as informações do site atualizadas e precisas, porém:</p>
+        <ul>
+            <li>Não garantimos que o site estará disponível ininterruptamente ou livre de erros;</li>
+            <li>Não nos responsabilizamos por decisões tomadas por operadoras de saúde parceiras;</li>
+            <li>Não nos responsabilizamos por danos indiretos, incidentais ou consequenciais resultantes do uso ou da impossibilidade de uso dos nossos serviços;</li>
+            <li>O prazo de regularização de planos pode variar conforme a operadora e a situação cadastral.</li>
+        </ul>
 
-            <h3>2. Natureza do Serviço</h3>
-            <p>A <strong>Unimed</strong> atua como intermediadora de serviços relacionados a planos de saúde, oferecendo suporte para:</p>
-            <ul>
-                <li>Emissão de 2ª via de faturas e boletos atualizados;</li>
-                <li>Negociação de faturas em atraso;</li>
-                <li>Regularização de planos de saúde suspensos ou cancelados;</li>
-                <li>Suporte ao cliente e atualização de dados cadastrais.</li>
-            </ul>
-            <p>Os serviços são prestados em parceria com operadoras de plano de saúde, sendo que a Unimed não é uma operadora de saúde, mas sim uma empresa de atendimento e suporte ao cliente.</p>
+        <h3>6. Propriedade Intelectual</h3>
+        <p>Todo o conteúdo deste site — incluindo textos, imagens, logotipos, design, código-fonte e marca — é de propriedade exclusiva da Med Sênior ou de seus licenciadores, protegido pelas leis de propriedade intelectual. É vedada a reprodução, distribuição ou modificação sem autorização prévia e expressa.</p>
 
-            <h3>3. Uso Adequado do Site</h3>
-            <p>O usuário se compromete a utilizar este site e nossos canais de comunicação de forma ética e lícita, abstendo-se de:</p>
-            <ul>
-                <li>Fornecer informações falsas, incompletas ou enganosas;</li>
-                <li>Tentar acessar áreas restritas do site sem autorização;</li>
-                <li>Utilizar robôs, spiders ou outros meios automatizados de acesso;</li>
-                <li>Interferir na segurança ou na integridade dos nossos sistemas;</li>
-                <li>Utilizar o site para fins ilícitos ou que violem direitos de terceiros.</li>
-            </ul>
+        <h3>7. Links para Terceiros</h3>
+        <p>Este site pode conter links para sites de terceiros (como operadoras de saúde e instituições financeiras). A Med Sênior não se responsabiliza pelo conteúdo, políticas de privacidade ou práticas de sites de terceiros.</p>
 
-            <h3>4. Responsabilidades do Usuário</h3>
-            <p>Para utilizar nossos serviços, o usuário deve:</p>
-            <ul>
-                <li>Ser maior de 18 anos ou estar representado por responsável legal;</li>
-                <li>Fornecer dados verdadeiros, precisos e atualizados;</li>
-                <li>Manter a confidencialidade de informações sensíveis compartilhadas;</li>
-                <li>Verificar a autenticidade de comunicações recebidas em nosso nome;</li>
-                <li>Informar-nos imediatamente sobre qualquer uso não autorizado de sua conta ou dados.</li>
-            </ul>
+        <h3>8. Alterações nos Termos</h3>
+        <p>Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. Alterações significativas serão comunicadas por meio dos nossos canais oficiais. O uso continuado do site após as alterações constitui aceitação dos novos termos.</p>
 
-            <h3>5. Limitação de Responsabilidade</h3>
-            <p>A Unimed se esforça para manter as informações do site atualizadas e precisas, porém:</p>
-            <ul>
-                <li>Não garantimos que o site estará disponível ininterruptamente ou livre de erros;</li>
-                <li>Não nos responsabilizamos por decisões tomadas por operadoras de saúde parceiras;</li>
-                <li>Não nos responsabilizamos por danos indiretos, incidentais ou consequenciais resultantes do uso ou da impossibilidade de uso dos nossos serviços;</li>
-                <li>O prazo de regularização de planos pode variar conforme a operadora e a situação cadastral.</li>
-            </ul>
+        <h3>9. Legislação Aplicável</h3>
+        <p>Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil. Quaisquer disputas serão resolvidas nos foros da comarca de domicílio do usuário, conforme previsto no Código de Defesa do Consumidor.</p>
 
-            <h3>6. Propriedade Intelectual</h3>
-            <p>Todo o conteúdo deste site — incluindo textos, imagens, logotipos, design, código-fonte e marca — é de propriedade exclusiva da Unimed ou de seus licenciadores, protegido pelas leis de propriedade intelectual. É vedada a reprodução, distribuição ou modificação sem autorização prévia e expressa.</p>
+        <h3>10. Contato</h3>
+        <p>Para dúvidas, sugestões ou reclamações sobre estes Termos de Uso, entre em contato:</p>
+        <ul>
+            
+            <li><strong>Atendimento:</strong> Disponível 24 horas</li>
+        </ul>
+    `
+};
 
-            <h3>7. Links para Terceiros</h3>
-            <p>Este site pode conter links para sites de terceiros (como operadoras de saúde e instituições financeiras). A Unimed não se responsabiliza pelo conteúdo, políticas de privacidade ou práticas de sites de terceiros.</p>
+function openModal(type) {
+    const overlay = document.getElementById('modalOverlay');
+    const content = document.getElementById('modalContent');
+    content.innerHTML = modalContent[type];
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
 
-            <h3>8. Alterações nos Termos</h3>
-            <p>Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. Alterações significativas serão comunicadas por meio dos nossos canais oficiais. O uso continuado do site após as alterações constitui aceitação dos novos termos.</p>
+function closeModal(event) {
+    if (!event || event.target.id === 'modalOverlay' || event.target.classList?.contains('modal-close')) {
+        document.getElementById('modalOverlay').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
 
-            <h3>9. Legislação Aplicável</h3>
-            <p>Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil. Quaisquer disputas serão resolvidas nos foros da comarca de domicílio do usuário, conforme previsto no Código de Defesa do Consumidor.</p>
-
-            <h3>10. Contato</h3>
-            <p>Para dúvidas, sugestões ou reclamações sobre estes Termos de Uso, entre em contato:</p>
-            <ul>
-                <li><strong>WhatsApp:</strong> Disponível via canal de atendimento</li>
-                <li><strong>Atendimento:</strong> Disponível 24 horas</li>
-            </ul>
-        </div>
-    </section>
-
-    <div class="legal-divider"></div>
-
-    <!-- POLÍTICA DE PRIVACIDADE -->
-    <section class="legal-section" id="politica-privacidade">
-        <div class="container">
-            <h2>Política de <span>Privacidade</span></h2>
-            <p class="last-update">Última atualização: 29 de Julho de 2026</p>
-
-            <div class="legal-highlight">
-                <p>A <strong>Unimed</strong> valoriza a privacidade e a segurança dos dados de seus clientes. Esta política descreve como coletamos, usamos, armazenamos e protegemos suas informações pessoais.</p>
-            </div>
-
-            <h3>1. Dados Coletados</h3>
-            <p>Podemos coletar as seguintes informações quando você utiliza nossos canais de atendimento:</p>
-            <ul>
-                <li><strong>Dados de identificação:</strong> nome completo, CPF, RG e data de nascimento;</li>
-                <li><strong>Dados de contato:</strong> número de telefone, endereço de e-mail e endereço residencial;</li>
-                <li><strong>Dados do plano:</strong> número da carteirinha, operadora, tipo de plano e dependentes;</li>
-                <li><strong>Dados de pagamento:</strong> informações bancárias necessárias para emissão de boletos e faturas;</li>
-                <li><strong>Dados de comunicação:</strong> histórico de conversas pelo WhatsApp, e-mails e ligações telefônicas.</li>
-            </ul>
-
-            <h3>2. Finalidade do Tratamento</h3>
-            <p>Seus dados são coletados e utilizados exclusivamente para as seguintes finalidades:</p>
-            <ul>
-                <li>Emitir 2ª via de faturas e boletos atualizados;</li>
-                <li>Negociar faturas em atraso e regularizar planos de saúde;</li>
-                <li>Prestar atendimento ao cliente e sanar dúvidas;</li>
-                <li>Atualizar dados cadastrais junto à operadora de saúde;</li>
-                <li>Enviar comunicações sobre vencimentos, reajustes e novidades do plano.</li>
-            </ul>
-
-            <h3>3. Compartilhamento de Dados</h3>
-            <p>Seus dados pessoais <strong>não são vendidos, alugados ou comercializados</strong> a terceiros. Podemos compartilhar informações apenas com:</p>
-            <ul>
-                <li>A operadora de plano de saúde contratada, exclusivamente para fins de regularização e atualização cadastral;</li>
-                <li>Prestadores de serviços que auxiliam em nossas operações (ex: sistemas de atendimento), sob rigorosos contratos de confidencialidade;</li>
-                <li>Órgãos públicos, quando exigido por lei ou ordem judicial.</li>
-            </ul>
-
-            <h3>4. Segurança da Informação</h3>
-            <p>Adotamos medidas técnicas e administrativas para proteger seus dados contra acesso não autorizado, alteração, divulgação ou destruição:</p>
-            <ul>
-                <li>Criptografia de dados em trânsito (SSL/TLS);</li>
-                <li>Armazenamento seguro em servidores com controle de acesso;</li>
-                <li>Políticas internas de confidencialidade para nossos colaboradores;</li>
-                <li>Monitoramento contínuo de nossos sistemas.</li>
-            </ul>
-
-            <h3>5. Seus Direitos (LGPD)</h3>
-            <p>Conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você possui os seguintes direitos:</p>
-            <ul>
-                <li>Acessar seus dados pessoais que mantemos;</li>
-                <li>Solicitar correção de dados incompletos, inexatos ou desatualizados;</li>
-                <li>Solicitar anonimização, bloqueio ou eliminação de dados desnecessários;</li>
-                <li>Revogar seu consentimento a qualquer momento;</li>
-                <li>Solicitar portabilidade dos dados a outro fornecedor;</li>
-                <li>Ser informado sobre o compartilhamento de seus dados.</li>
-            </ul>
-            <p>Para exercer seus direitos, entre em contato pelo nosso canal de atendimento oficial.</p>
-
-            <h3>6. Cookies e Tecnologias de Rastreamento</h3>
-            <p>Este site pode utilizar cookies e tecnologias similares para melhorar a experiência do usuário, analisar tráfego e personalizar conteúdo. Você pode configurar seu navegador para recusar cookies, mas isso pode afetar a funcionalidade de alguns recursos.</p>
-
-            <h3>7. Alterações nesta Política</h3>
-            <p>Esta Política de Privacidade pode ser atualizada periodicamente. Recomendamos que você a revise com frequência. Alterações significativas serão comunicadas por meio dos nossos canais oficiais.</p>
-
-            <h3>8. Contato</h3>
-            <p>Em caso de dúvidas sobre esta Política de Privacidade ou sobre o tratamento de seus dados pessoais, entre em contato:</p>
-            <ul>
-                <li><strong>WhatsApp:</strong> Disponível via canal de atendimento</li>
-                <li><strong>Atendimento:</strong> Disponível 24 horas</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p style="margin-bottom: 10px;">
-                <a href="#termos-de-uso" target="_self" style="color: #007a4a; text-decoration: none; font-weight: 600; margin: 0 10px;">Termos de Uso</a> |
-                <a href="#politica-privacidade" target="_self" style="color: #007a4a; text-decoration: none; font-weight: 600; margin: 0 10px;">Política de Privacidade</a>
-            </p>
-            <p>
-                © 2026 Unimed — Todos os direitos reservados.
-            </p>
-        </div>
-    </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/11967281183?text=Olá!%20Preciso%20de%20ajuda%20com%20minha%20fatura%20do%20plano%20de%20saúde." class="floating-whatsapp" target="_blank" title="Fale Conosco">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.358-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-    </a>
-
-    <script>
-    </script>
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+});
+</script>
 
 </body>
 </html>
